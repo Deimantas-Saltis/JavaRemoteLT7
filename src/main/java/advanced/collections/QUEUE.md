@@ -1,0 +1,1 @@
+![java queue example](http://tutorials.jenkov.com/images/java-collections/java-queue.png)

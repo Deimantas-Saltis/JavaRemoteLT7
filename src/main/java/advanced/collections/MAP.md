@@ -1,0 +1,1 @@
+![java map example](https://javatutorial.net/wp-content/uploads/2017/09/java-initialize-hashmap.png)
