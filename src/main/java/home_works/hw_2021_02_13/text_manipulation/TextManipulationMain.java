@@ -1,4 +1,4 @@
-package home_works.HW_2021_02_13.text_manipulation;
+package home_works.hw_2021_02_13.text_manipulation;
 
 public class TextManipulationMain {
 

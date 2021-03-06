@@ -1,4 +1,4 @@
-package home_works.HW_2021_02_13.mobile;
+package home_works.hw_2021_02_13.mobile;
 
 /*
 Sukurti objektą `Mobile`, su laukais: `model`, `manufacturer`, `price`

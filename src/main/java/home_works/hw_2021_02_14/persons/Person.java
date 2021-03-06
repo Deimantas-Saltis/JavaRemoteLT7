@@ -1,4 +1,4 @@
-package home_works.HW_2021_02_14.persons;
+package home_works.hw_2021_02_14.persons;
 
 public abstract class Person {
 

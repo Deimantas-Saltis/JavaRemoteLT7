@@ -1,4 +1,4 @@
-package home_works.HW_2021_02_13.circle;
+package home_works.hw_2021_02_13.circle;
 
 import java.util.Scanner;
 
