@@ -16,8 +16,9 @@ public class CompanyAndDeviceMain {
 
         String mostExpensiveDevice = findMostExpensiveDevice(companies);
         List<Company> technologyCompanies = findTechnologyCompanies(companies);
+        List<Device> mostExpensiveDevicesOfAllCompanies = findEachCompaniesMostExpensiveDevice(companies);
 
-        writeResult(technologyCompanies, mostExpensiveDevice);
+        writeResult(technologyCompanies, mostExpensiveDevice, mostExpensiveDevicesOfAllCompanies);
     }
 
     private static String findMostExpensiveDevice(List<Company> companies) {
@@ -32,6 +33,20 @@ public class CompanyAndDeviceMain {
         return mostExpensiveDevice.toString();
     }
 
+    private static List<Device> findEachCompaniesMostExpensiveDevice(List<Company> companies) {
+        List<Device> devices = new ArrayList<>();
+        for (Company company : companies) {
+            Device mostExpensiveDevice = company.getDevices().get(0);
+            for (Device device : company.getDevices()) {
+                if (mostExpensiveDevice.getPrice() < device.getPrice()) {
+                    mostExpensiveDevice = device;
+                }
+            }
+            devices.add(mostExpensiveDevice);
+        }
+        return devices;
+    }
+
     private static List<Company> findTechnologyCompanies(List<Company> companies) {
         List<Company> technologyCompanies = new ArrayList<>();
         for (Company company : companies) {
@@ -42,13 +57,18 @@ public class CompanyAndDeviceMain {
         return technologyCompanies;
     }
 
-    private static void writeResult(List<Company> techCompanies, String mostExpensiveDevice) {
+    private static void writeResult(List<Company> techCompanies, String mostExpensiveDevice, List<Device> mostExpensiveDevicesOfAllCompanies) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(OUTPUT_FILE_LOCATION))) {
             bw.write("Brangiausia prekė: \n" + mostExpensiveDevice);
 
             bw.write("\n\nTechnologijų kompanijos: \n");
             for (Company company : techCompanies) {
                 bw.write(company + "\n");
+            }
+
+            bw.write("\n\nBrangiausi divaisai: \n");
+            for (Device device : mostExpensiveDevicesOfAllCompanies) {
+                bw.write(device.toString() + "\n");
             }
         } catch (IOException e) {
             System.out.println("Ivyko klaida irasant duomenis i faila");

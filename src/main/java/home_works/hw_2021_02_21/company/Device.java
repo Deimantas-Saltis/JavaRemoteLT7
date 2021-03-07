@@ -22,6 +22,7 @@ public class Device {
         return price;
     }
 
+    @Override
     public String toString() {
         return String.format("Pavadinimas %s, kaina %.02f", name, price);
     }

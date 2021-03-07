@@ -28,6 +28,7 @@ public class Company {
         return devices;
     }
 
+    @Override
     public String toString() {
         return String.format("Pavadinimas: %s, adresas: %s", name, address);
     }
