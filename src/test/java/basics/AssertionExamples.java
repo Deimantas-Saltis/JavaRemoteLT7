@@ -1,8 +1,16 @@
 package basics;
 
 import fundamentals_testing.Calculator;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AssertionExamples {
 
@@ -15,7 +23,7 @@ public class AssertionExamples {
         int result = calculator.add(5, 115);
 
         // then
-        Assertions.assertEquals(120, result);
+        assertEquals(120, result);
     }
 
     @Test
@@ -27,7 +35,7 @@ public class AssertionExamples {
         int result = calculator.subtract(5, 115);
 
         // then
-        Assertions.assertEquals(-110, result);
+        assertEquals(-110, result);
     }
 
     @Test
@@ -39,7 +47,7 @@ public class AssertionExamples {
         int result = calculator.divide(10, 10);
 
         // then
-        Assertions.assertEquals(1, result);
+        assertEquals(1, result);
     }
 
     @Test
@@ -51,7 +59,7 @@ public class AssertionExamples {
         int result = calculator.multiply(5, 5);
 
         // then
-        Assertions.assertEquals(25, result);
+        assertEquals(25, result);
     }
 
     @Test
@@ -64,8 +72,8 @@ public class AssertionExamples {
         boolean condition = firstNum == secondNum;
 
         // then
-        Assertions.assertTrue(firstNum != secondNum);
-        Assertions.assertFalse(condition);
+        assertTrue(firstNum != secondNum);
+        assertFalse(condition);
     }
 
     @Test
@@ -77,8 +85,8 @@ public class AssertionExamples {
         // when
 
         // then
-        Assertions.assertNull(emptyText);
-        Assertions.assertNotNull(text);
+        assertNull(emptyText);
+        assertNotNull(text);
     }
 
     @Test
@@ -90,7 +98,7 @@ public class AssertionExamples {
         // when
 
         // then
-        Assertions.assertArrayEquals(firstArr, secondArr);
+        assertArrayEquals(firstArr, secondArr);
     }
 
     @Test
@@ -104,7 +112,7 @@ public class AssertionExamples {
         // when
 
         // then
-        Assertions.assertSame(text1, text2);
-        Assertions.assertNotSame(text1, text3);
+        assertSame(text1, text2);
+        assertNotSame(text1, text3);
     }
 }
