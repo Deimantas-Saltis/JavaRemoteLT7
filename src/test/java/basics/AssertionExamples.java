@@ -51,6 +51,6 @@ public class AssertionExamples {
         int result = calculator.multiply(5, 5);
 
         // then
-        Assertions.assertEquals(10, result);
+        Assertions.assertEquals(25, result);
     }
 }
